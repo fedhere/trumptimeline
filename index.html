@@ -1,0 +1,153 @@
+<html>
+  <p>"Trump & Obama 1st term Approval Ratings" <a href="ReadMe.html"> README</a>
+<div id="chartContainer" >
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+  <script type="text/javascript">
+    var svg = dimple.newSvg("#chartContainer", 990, 400);
+      svg.append("text").attr("x", 450).attr("y", 14).attr("text-anchor", "middle").style("font-size", "18px").style("font-weight", "bold").text("Trump & Obama 1st term Approval Ratings");   
+      svg.append("text").attr("x", 450).attr("y", 30).attr("text-anchor", "middle").style("font-size", "13px").style("font-weight", "bold").text("y-axis: Total Approval,    color: Strong Approval.");   
+      svg.append("text").attr("x", 450).attr("y", 50).attr("text-anchor", "middle").style("font-size", "13px").style("font-weight", "bold").text("Roll over to see Events in the Trump presidency (top) and numbers in detail");
+      svg.append("text").attr("x", 90).attr("y", 91).attr("text-anchor", "left").style("font-size", "13px").style("font-weight", "bold").text("Obama: started off at 67% total and 41% strong approval ratings"); 
+      svg.append("text").attr("x", 90).attr("y", 277).attr("text-anchor", "left").style("font-size", "13px").style("font-weight", "bold").text("Trump: started off at 56% total and 38% strong approval ratings"); 
+    d3.tsv("data/allratings.tsv", function (data) {
+    //d3.tsv("/data/example_data.tsv", function (data) {
+
+      // Filter for a single SKU and Channel
+      dataTrump = dimple.filterData(data, "President", "Trump");
+      dataObama = dimple.filterData(data, "President", "Obama");
+
+      // Create and Position a Chart
+      var myChart = new dimple.chart(svg, dataTrump);
+      myChart.setBounds(60, 30, 905, 300);
+      var x = myChart.addCategoryAxis("x", "Date")
+      
+      //myChart.addMeasureAxis("y", "Event"); 
+      var y = myChart.addMeasureAxis("y", "Total Approval");
+      y.overrideMin = 45.;
+      y.overrideMax = 70.;
+      x.overrideMax = new Date("2017-03-20");
+      x.overrideMax = new Date("2017-01-18");
+      // Order the x axis by date
+      x.addOrderRule("Date");
+      // Min price will be green, middle price yellow and max red
+      myChart.addColorAxis("Strongly Approve", ["red", "yellow", "green"]);
+
+      myChart.addSeries("President", dimple.plot.line);
+      // Add a thick line with markers
+      var lines = myChart.addSeries(["Events", "President"], dimple.plot.bubble);
+      lines.getTooltipText = function (e){
+          var str = e.aggField[0];
+          console.log(str.split(";"));
+          return str.split(";");
+      };
+      x.addOrderRule("Date");
+      lines.lineWeight = 5;
+      y.title = "Total Approval of presidency %";
+      
+      //lines.lineMarkers = true;
+      // Draw the chart
+      //myChart.addCategoryAxis("x", "Date").hidden = true;
+      myChart.draw();
+              
+          // Create and Position a Chart for Obama
+      var myChart = new dimple.chart(svg, dataObama);
+      myChart.setBounds(60, 30, 905, 300);
+      var x = myChart.addCategoryAxis("x", "Date")
+      x.hidden = true;
+      //myChart.addMeasureAxis("y", "Event"); 
+      var y = myChart.addMeasureAxis("y", "Total Approval");
+      y.overrideMin = 45.;
+      y.overrideMax = 70.;
+      x.overrideMax = new Date("2017-03-20");
+      x.overrideMax = new Date("2017-01-18");
+      // Order the x axis by date
+      x.addOrderRule("Date");
+      // Min price will be green, middle price yellow and max red
+      svg2.append("text").attr("x", 450).attr("y", 30).attr("text-anchor", "middle").style("font-size", "13px").style("font-weight", "bold").text("y-axis: Strong Approval,    color: Total Approval."); 
+      svg2.append("text").attr("x", 450).attr("y", 30).attr("text-anchor", "middle").style("font-size", "13px").style("font-weight", "bold").text("y-axis: Strong Approval,    color: Total Approval."); 
+      svg2.append("text").attr("x", 450).attr("y", 50).attr("text-anchor", "middle").style("font-size", "13px").style("font-weight", "bold").text("Roll over to see numbers in detail");
+      myChart.addColorAxis("Strongly Approve", ["pink", "purple", "blue"]);
+
+      myChart.addSeries("President", dimple.plot.line);
+      // Add a thick line with markers
+      var lines = myChart.addSeries(["President"], dimple.plot.bubble);
+      x.addOrderRule("Date");
+      lines.lineWeight = 5;
+      //lines.lineMarkers = true;
+      y.title = "Total Approval of presidency %";
+      myChart.draw();
+// Draw the chart
+       });
+      
+    var svg2 = dimple.newSvg("#chartContainer", 990, 400);
+    d3.tsv("data/allratings.tsv", function (data) {
+    //d3.tsv("/data/example_data.tsv", function (data) {
+
+      // Filter for a single SKU and Channel
+      dataTrump = dimple.filterData(data, "President", "Trump");
+      dataObama = dimple.filterData(data, "President", "Obama");
+
+      // Create and Position a Chart
+      var myChart = new dimple.chart(svg2, dataTrump);
+      myChart.setBounds(60, 30, 905, 300);
+      var x = myChart.addCategoryAxis("x", "Date")
+      //myChart.addMeasureAxis("y", "Event"); 
+      var y = myChart.addMeasureAxis("y", "Strongly Approve");
+      y.overrideMin = 25.;
+      y.overrideMax = 50.;
+      x.overrideMax = new Date("2017-03-20");
+      x.overrideMax = new Date("2017-01-18");
+      // Order the x axis by date
+      x.addOrderRule("Date");
+
+      // Min price will be green, middle price yellow and max red
+      myChart.addColorAxis("Total Approval", ["red", "yellow", "green"]);
+
+      myChart.addSeries("President", dimple.plot.line);
+      // Add a thick line with markers
+      var lines = myChart.addSeries(["President"], dimple.plot.bubble);
+      x.addOrderRule("Date");
+      lines.lineWeight = 5;
+      //lines.lineMarkers = true;
+      y.title = "Strongly Approve presidency %";
+
+      // Draw the chart
+      myChart.draw();
+
+      var myChart = new dimple.chart(svg2, dataObama);
+      myChart.setBounds(60, 30, 905, 300);
+      var x = myChart.addCategoryAxis("x", "Date")
+      x.hidden = true;
+      //myChart.addMeasureAxis("y", "Event"); 
+      var y = myChart.addMeasureAxis("y", "Strongly Approve");
+      y.overrideMin = 25.;
+      y.overrideMax = 50.;
+      x.overrideMax = new Date("2017-03-20");
+      x.overrideMax = new Date("2017-01-18");
+      // Order the x axis by date
+      x.addOrderRule("Date");
+      
+      // Min price will be green, middle price yellow and max red
+      myChart.addColorAxis("Total Approval", ["pink", "purple", "blue"]);
+
+      myChart.addSeries("President", dimple.plot.line);
+      // Add a thick line with markers
+      var lines = myChart.addSeries(["President"], dimple.plot.bubble);
+      x.addOrderRule("Date");
+      lines.lineWeight = 5;
+      //lines.lineMarkers = true;
+      y.title = "Strongly Approve presidency %";
+
+      // Draw the chart
+      myChart.draw();
+
+    });
+  </script>
+     <p>
+    Line 1
+    <br>
+    Line 2
+  </p>
+</div>
+</html>

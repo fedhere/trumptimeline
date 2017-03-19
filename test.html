@@ -1,0 +1,46 @@
+<html>
+<div id="chartContainer">
+ 
+    <script src="http://dimplejs.org/dist/dimple.v2.1.0.min.js">
+    var data = [{
+    "project_id": "1114",
+        "project_status": "Active",
+        "request_date": "2014-05-31",
+        "project_type": "CRISPR",
+        "cost": "2",
+        "due_date": "2014-08-14",
+        "service_durations_days": "75",
+        "days_overdue": "1",
+        "active_services": ""
+}, {
+    "project_id": "1115",
+        "project_status": "Active",
+        "request_date": "2014-06-01",
+        "project_type": "CRISPS",
+        "cost": "5",
+        "due_date": "2014-08-14",
+        "service_durations_days": "75",
+        "days_overdue": "1",
+        "active_services": ""
+}, {
+    "project_id": "1116",
+        "project_status": "Active",
+        "request_date": "2014-06-02",
+        "project_type": "CRISPY",
+        "cost": "10",
+        "due_date": "2014-08-14",
+        "service_durations_days": "75",
+        "days_overdue": "1",
+        "active_services": ""
+}];
+
+var chart = new dimple.chart(svg, data);
+
+chart.addTimeAxis("x", "request_date", "%Y-%m-%d", "%Y-%m-%d");
+chart.addCategoryAxis("y", "project_type");
+var z = chart.addMeasureAxis("z", "cost");
+var s = chart.addSeries(["project_id", "service_durations_days", "days_overdue", "active_services", "project_status"], dimple.plot.bubble);
+chart.draw();
+      </script>
+</div>
+</html>

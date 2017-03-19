@@ -1,0 +1,10 @@
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: "#FFFCF8";
+}
+.p {
+    color: red;
+    text-align: center;
+}
