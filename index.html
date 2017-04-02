@@ -67,7 +67,10 @@
       svg2.append("text").attr("x", 450).attr("y", 30).attr("text-anchor", "middle").style("font-size", "13px").style("font-weight", "bold").text("y-axis: Strong Approval,    color: Total Approval."); 
       svg2.append("text").attr("x", 450).attr("y", 30).attr("text-anchor", "middle").style("font-size", "13px").style("font-weight", "bold").text("y-axis: Strong Approval,    color: Total Approval."); 
       svg2.append("text").attr("x", 450).attr("y", 50).attr("text-anchor", "middle").style("font-size", "13px").style("font-weight", "bold").text("Roll over to see numbers in detail");
-      svg2.append("text").attr("x", 90).attr("y", 277).attr("text-anchor", "left").style("font-size", "13px").style("font-weight", "bold").text("While the Total ratings were higher for Obama, the core supporters that Strongly approve the presidency is comparable at 30-40%"); 
+      svg2.append("text").attr("x", 90).attr("y", 277).attr("text-anchor", "left").style("font-size", "13px").style("font-weight", "bold").text("While the Total ratings were higher for Obama, the core supporters that Strongly approve the presidency was comparable at 30-40%"); 
+      svg2.append("text").attr("x", 90).attr("y", 297).attr("text-anchor", "left").style("font-size", "13px").style("font-weight", "bold").text("until about March 7 - the attempt to repeal ACA and wire-tapping allegations resonate in the news since."); 
+      myChart.addColorAxis("Strongly Approve", ["pink", "purple", "blue"]);
+      svg2.append("text").attr("x", 90).attr("y", 317).attr("text-anchor", "left").style("font-size", "13px").style("font-weight", "bold").text("Strong Approval rating continues to drop and falls below 30% on March 14"); 
       myChart.addColorAxis("Strongly Approve", ["pink", "purple", "blue"]);
 
       myChart.addSeries("President", dimple.plot.line);
