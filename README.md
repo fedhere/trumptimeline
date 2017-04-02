@@ -2,7 +2,7 @@
 
 The Obama administration approval for the same period within their administration is shown for comparison.
 
-Data are collected from the Rasmussen Report and can be downloaded here for Trump and here	for the	Obama administration. Originally downloaded	on March 18 2017.
+Data are collected from the >Rasmussen Report](http://www.rasmussenreports.com/") and can be downloaded [here for Trump's](http://www.rasmussenreports.com/public_content/politics/trump_administration/trump_approval_index_history) and [here for Obama'a](http://www.rasmussenreports.com/public_content/politics/obama_administration/obama_approval_index_history)'s administration. Originally downloaded	on March 18 2017.
 
 The visualization shows the Total approval rating as y-value on	the top	panel, with color code corresponding to	percentage of people Strongly approving the presidency, and vice-versa, y-value percentage shows Strong approval color coded by	Total approval in the bottom panel.
 
