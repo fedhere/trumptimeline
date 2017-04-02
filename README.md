@@ -4,7 +4,7 @@ The Obama administration approval for the same period within their administratio
 
 Data are collected from the [Rasmussen Report](http://www.rasmussenreports.com/") and can be downloaded [here for Trump's](http://www.rasmussenreports.com/public_content/politics/trump_administration/trump_approval_index_history) and [here for Obama'a](http://www.rasmussenreports.com/public_content/politics/obama_administration/obama_approval_index_history)'s administration. Originally downloaded	on March 18 2017.
 
-The [visualization] (http://cosmo.nyu.edu/~fb55/vizs/trumptimeline/) shows the Total approval rating as y-value on	the top	panel, with color code corresponding to	percentage of people Strongly approving the presidency, and vice-versa, y-value percentage shows Strong approval color coded by	Total approval in the bottom panel.
+The [visualization](http://cosmo.nyu.edu/~fb55/vizs/trumptimeline/) shows the Total approval rating as y-value on	the top	panel, with color code corresponding to	percentage of people Strongly approving the presidency, and vice-versa, y-value percentage shows Strong approval color coded by	Total approval in the bottom panel.
 
 Noticebly, the Total approval rating was higher	for Obama throughout, but the Strong approval percentage is comparable.
 
