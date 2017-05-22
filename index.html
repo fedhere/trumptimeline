@@ -25,9 +25,11 @@
       
       //myChart.addMeasureAxis("y", "Event"); 
       var y = myChart.addMeasureAxis("y", "Total Approval");
+      console.log("Trump , tot",d3.variance(y))
+        
       y.overrideMin = 40.;
       y.overrideMax = 70.;
-      x.overrideMax = new Date("2017-05-02");
+      x.overrideMax = new Date("2017-05-20");
       x.overrideMin = new Date("2017-01-18");
       // Order the x axis by date
       x.addOrderRule("Date");
@@ -58,9 +60,11 @@
       x.hidden = true;
       //myChart.addMeasureAxis("y", "Event"); 
       var y = myChart.addMeasureAxis("y", "Total Approval");
+      console.log("Obama , tot",y.variance)
+        
       y.overrideMin = 40.;
       y.overrideMax = 70.;
-      x.overrideMax = new Date("2017-05-02");
+      x.overrideMax = new Date("2017-05-20");
       x.overrideMin = new Date("2017-01-18");
       // Order the x axis by date
       x.addOrderRule("Date");
@@ -99,9 +103,11 @@
       var x = myChart.addCategoryAxis("x", "Date")
       //myChart.addMeasureAxis("y", "Event"); 
       var y = myChart.addMeasureAxis("y", "Strongly Approve");
+      console.log("Trump, strong",y.variance)
+        
       y.overrideMin = 20.;
       y.overrideMax = 50.;
-      x.overrideMax = new Date("2017-05-02");
+      x.overrideMax = new Date("2017-05-20");
       x.overrideMin = new Date("2017-01-18");
       // Order the x axis by date
       x.addOrderRule("Date");
@@ -126,9 +132,10 @@
       x.hidden = true;
       //myChart.addMeasureAxis("y", "Event"); 
       var y = myChart.addMeasureAxis("y", "Strongly Approve");
+      console.log("obama, strong",y.variance)
       y.overrideMin = 20.;
       y.overrideMax = 50.;
-      x.overrideMax = new Date("2017-05-02");
+      x.overrideMax = new Date("2017-05-20");
       x.overrideMin = new Date("2017-01-18");
       // Order the x axis by date
       x.addOrderRule("Date");
